@@ -27,7 +27,7 @@
 Hệ thống bao gồm:
 
 - **Frontend**:  
-  - Giao diện người dùng được xây dựng bằng **EJS** và **CSS**.  
+  - Giao diện người dùng được xây dựng bằng **JS** và **CSS**.  
   - Cho phép tải lên tệp và hiển thị kết quả phân tích.  
 
 - **Backend**:  
