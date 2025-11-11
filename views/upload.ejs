@@ -1,0 +1,67 @@
+<%- include('partials/header') %>
+
+<main class="main-content">
+  <div class="container">
+    <div class="upload-section">
+      <h1 class="page-title">
+        <i class="fas fa-cloud-upload-alt"></i>
+        Upload Báo Cáo
+      </h1>
+      
+      <% if (error) { %>
+        <div class="alert alert-error">
+          <i class="fas fa-exclamation-circle"></i>
+          <%= error %>
+        </div>
+      <% } %>
+      
+      <div class="upload-card">
+        <form action="/upload" method="POST" enctype="multipart/form-data" id="uploadForm">
+          <div class="upload-area" id="uploadArea">
+            <input type="file" name="reportFile" id="fileInput" accept=".xlsx,.xls,.docx,.doc,.pptx,.ppt,.pdf" required style="display: none;">
+            <div class="upload-icon">
+              <i class="fas fa-file-upload"></i>
+            </div>
+            <h3>Kéo thả file vào đây</h3>
+            <p class="upload-info">
+              Hỗ trợ: Excel (.xlsx, .xls), Word (.docx, .doc), PowerPoint (.pptx, .ppt), PDF (.pdf)
+            </p>
+            <p class="upload-info">
+              Kích thước tối đa: 10MB
+            </p>
+            <button type="submit" class="btn btn-primary" id="submitBtn">
+              <i class="fas fa-paper-plane"></i> Phân Tích Ngay
+            </button>
+          </input>
+          
+          <div class="file-preview" id="filePreview" style="display: none;">
+            <div class="file-info">
+              <i class="fas fa-file file-icon"></i>
+              <div class="file-details">
+                <span class="file-name" id="fileName"></span>
+                <span class="file-size" id="fileSize"></span>
+              </div>
+              <button type="button" class="btn-remove" onclick="removeFile()">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <div class="upload-instructions">
+        <h3><i class="fas fa-info-circle"></i> Hướng Dẫn</h3>
+        <ol>
+          <li>Chọn file báo cáo (Excel, Word, PowerPoint hoặc PDF)</li>
+          <li>Đảm bảo file chứa dữ liệu dạng bảng hoặc số liệu</li>
+          <li>Click "Phân Tích Ngay" để bắt đầu</li>
+          <li>Chờ hệ thống xử lý và tạo biểu đồ</li>
+          <li>Xem kết quả phân tích từ Gemini AI</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="/js/main.js"></script>
+<%- include('partials/footer') %>

@@ -1,0 +1,122 @@
+<%- include('partials/header') %>
+
+<main class="main-content">
+  <div class="container">
+    <div class="analysis-section">
+      <h1 class="page-title">
+        <i class="fas fa-chart-line"></i>
+        Kết Quả Phân Tích
+      </h1>
+      
+      <div class="file-info-banner">
+        <i class="fas fa-file-alt"></i>
+        <span>File: <strong><%= fileName %></strong></span>
+      </div>
+      
+      <!-- AI Analysis Summary -->
+      <div class="analysis-card">
+        <h2 class="card-title">
+          <i class="fas fa-robot"></i>
+          Phân Tích Từ Gemini AI
+        </h2>
+        
+        <div class="analysis-content">
+          <div class="analysis-section">
+            <h3><i class="fas fa-info-circle"></i> Tổng Quan</h3>
+            <p><%= analysis.summary %></p>
+          </div>
+          
+          <div class="analysis-section">
+            <h3><i class="fas fa-chart-line"></i> Xu Hướng</h3>
+            <p><%= analysis.trends %></p>
+          </div>
+          
+          <div class="analysis-section">
+            <h3><i class="fas fa-lightbulb"></i> Insights</h3>
+            <p><%= analysis.insights %></p>
+          </div>
+          
+          <div class="analysis-section">
+            <h3><i class="fas fa-bullhorn"></i> Khuyến Nghị</h3>
+            <p><%= analysis.recommendations %></p>
+          </div>
+        </div>
+        
+        <details class="full-analysis">
+          <summary>Xem phân tích chi tiết</summary>
+          <div class="full-analysis-content">
+            <pre><%= analysis.fullAnalysis %></pre>
+          </div>
+        </details>
+      </div>
+      
+      <!-- Charts -->
+      <div class="charts-section">
+        <h2 class="section-title">
+          <i class="fas fa-chart-bar"></i>
+          Biểu Đồ Trực Quan
+        </h2>
+        
+        <div class="charts-grid">
+          <% charts.forEach((chart, index) => { %>
+            <div class="chart-card">
+              <h3 class="chart-title"><%= chart.title %></h3>
+              <p class="chart-description"><%= chart.description %></p>
+              <div class="chart-image">
+                <img src="<%= chart.image %>" alt="<%= chart.title %>">
+              </div>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+      
+      <!-- Data Table -->
+      <div class="data-section">
+        <h2 class="section-title">
+          <i class="fas fa-table"></i>
+          Dữ Liệu Chi Tiết
+        </h2>
+        
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <% if (data.length > 0) { %>
+                  <% Object.keys(data[0]).forEach(key => { %>
+                    <th><%= key %></th>
+                  <% }) %>
+                <% } %>
+              </tr>
+            </thead>
+            <tbody>
+              <% data.slice(0, 50).forEach(row => { %>
+                <tr>
+                  <% Object.values(row).forEach(value => { %>
+                    <td><%= value %></td>
+                  <% }) %>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+          
+          <% if (data.length > 50) { %>
+            <p class="table-note">Hiển thị 50/<%= data.length %> dòng đầu tiên</p>
+          <% } %>
+        </div>
+      </div>
+      
+      <div class="actions-section">
+        <a href="/upload" class="btn btn-primary">
+          <i class="fas fa-upload"></i>
+          Phân Tích File Khác
+        </a>
+        <button onclick="window.print()" class="btn btn-secondary">
+          <i class="fas fa-print"></i>
+          In Báo Cáo
+        </button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%- include('partials/footer') %>
