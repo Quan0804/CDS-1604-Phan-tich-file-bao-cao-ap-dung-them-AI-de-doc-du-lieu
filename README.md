@@ -57,28 +57,35 @@ Hệ thống bao gồm:
 ## 3. Một số hình ảnh hệ thống
 
 <div align="center">
-  <img src="docs/anhanh1.png" width="400" height="400"/>
+  <img src="docs/anhanh1.png" width="600" height="600"/>
   <p><b>Trang chủ</b></p>
 </div>
 
 <br>
 
 <div align="center">
-  <img src="docs/anhanh2.png" width="600" height="600"/>
+  <img src="docs/anhanh2.png" width="400" height="400"/>
   <p><b>Form tải lên tệp</b></p>
 </div>
 
 <br>
 
 <div align="center">
-  <img src="docs/anhanh3.png" width="400" height="400"/>
+  <img src="docs/anhanh5.png" width="600" height="600"/>
+  <p><b>Kết quả phân tích</b></p>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="docs/anhanh3.png" width="600" height="600"/>
   <p><b>Biểu đồ phân tích</b></p>
 </div>
 
 <br>
 
 <div align="center">
-  <img src="docs/anhanh4.png" width="400" height="400"/>
+  <img src="docs/anhanh4.png" width="600" height="600"/>
   <p><b>Lịch sử phân tích</b></p>
 </div>
 
