@@ -4,7 +4,7 @@
     </a>
 </h2>
 <h2 align="center">
-   REPORT ANALYSIS APP
+   PHÂN TÍCH FILE BÁO CÁO ÁP DỤNG THÊM AI ĐỂ ĐỌC DỮ LIỆU
 </h2>
 <div align="center">
     <p align="center">
